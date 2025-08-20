@@ -3,14 +3,13 @@ import { ActivatedRoute,  Router } from '@angular/router';
 import { Github } from '../../serve/github';
 import { UserGithub } from '../../interface/gitUser';
 import { GitRepos } from '../../interface/gitRepos';
-import { Home } from "../home/home";
-import {  NgIcon } from '@ng-icons/core';
+
 
 
 
 @Component({
   selector: 'app-perfil',
-  imports: [Home, NgIcon, ],
+  imports: [ ],
   templateUrl: './perfil.html',
   styleUrl: './perfil.scss'
 })
@@ -100,3 +99,4 @@ export class Perfil implements OnInit {
 
 
 }
+
