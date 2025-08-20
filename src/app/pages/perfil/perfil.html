@@ -1,0 +1,73 @@
+<div class="topo">
+  <h1>Pesquisa de Perfil do <span>GitHub</span></h1>
+  <input type="text" placeholder="Digite o nome do usuário">
+  <button (click)="goBack()">Voltar</button>
+</div>
+
+<div class="pagina">
+<!--
+  <div class="Allusers">
+    @if (todos) {
+    @for (a of todos; track a.id) {
+
+    <div class="card">
+      <img src="{{a.avatar_url}}">
+      <h1>{{a.login}} </h1>
+      <button (click)="(a.html_url)">Perfil do GitHub</button>
+    </div>
+    }
+    }
+  </div>
+-->
+  <div class="perfilUsuario">
+    @for (b of usuario; track b.id) {
+    <div class="card">
+      <div class="card1">
+        <img src="{{b.avatar_url}}">
+        <div class="row">
+          <h1>{{b.name}} </h1>
+          <p>@{{b.login}}</p>
+        </div>
+      </div>
+      <div>
+
+        <p>{{b.bio}}</p>
+        <div>
+          <ul>
+            <li> <span class="material-icons">group</span>  {{b.followers}} seguidores</li>
+            <li><span class="material-icons">heart_broken</span> {{b.public_repos}} seguindo</li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li><span class="material-icons">work</span>{{b.company}}</li>
+            <li><span class="material-icons">location_on</span>{{b.location}}</li>
+            <li><span class="material-icons">email</span>{{b.email}}</li>
+            <li><span class="material-icons">language</span><a href="{{b.blog}}">{{b.blog}}</a></li>
+            <li><span class="material-icons">phone</span>{{b.twitter_username}}</li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <a class="btn" href="{{b.html_url}}" >Contato</a>
+  }
+  </div>
+  <div class="repos">
+    @for (a of repos; track a.id) {
+    <div class="cardRepos">
+      <h2>Repositório: <a href="{{a.html_url}}">{{a.name}}</a> </h2>
+    <h5>@if (a.description) {
+      Descrição: {{a.description}}
+    } @else {
+      Descrição: Sem descrição}
+    </h5>
+    <p><span class="material-icons">star_border</span> {{a.stargazers_count}} curtidas  - <span class="atualizado">{{atualizado(a.updated_at)}}</span></p>
+    </div>
+    }
+  </div>
+
+
+
+</div>
